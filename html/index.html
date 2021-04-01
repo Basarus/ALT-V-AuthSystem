@@ -17,7 +17,7 @@
                 <div v-for='(button, index) in pageList' :key='index' v-bind:class='[button === page ? "auth__menu_navbar_button_acitve" : "auth__menu_navbar_button"]'  @click='page = button'>{{button}}</div>
             </div>
             <div class='auth__menu_inputmenu'>
-            <input v-if='page === "Авторизация" || page === "Регистрация"' id='login' class='auth__input' placeholder="Введите логин" />
+            <input v-if='page === "Авторизация" || page === "Регистрация"' id='login' type='text' class='auth__input' placeholder="Введите логин" />
             <input v-if='page === "Восстановление" || page === "Регистрация"' id='email' class='auth__input' placeholder="Введите email" />
             <input v-if='page === "Авторизация" || page === "Регистрация"' id='pass' type='password' class='auth__input' placeholder="Введите пароль" />
             <input v-if='page === "Регистрация"' id='re_pass' type='password' class='auth__input' placeholder="Введите пароль повторно" />
@@ -47,6 +47,11 @@
     </div>
 </body>
 <script>
+    window.addEventListener('load', function () {
+        if ('alt' in window) {
+            alt.emit('cef::auth:ready')
+        }
+
 document.addEventListener('mousemove', move);
 function move (e){
 this.querySelectorAll('.auth__close').forEach(close => {
