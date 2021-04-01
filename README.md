@@ -11,4 +11,4 @@ web.on('cef::auth:registration') && alt.onServer('server::auth:registration') //
 web.on('cef::auth:recovery') && alt.onServer('server::auth:recovery') // -> {email })        
 
 
-[![Alt text for your video](https://img.youtube.com/vi/w2S1I8dlOIs/0.jpg)](https://youtu.be/cw2PVjrbsCM)
+[![Alt text for your video](https://imgur.com/tVWhyQm)
