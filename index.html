@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app' class='auth__background'>
+        <div class='auth__npc'></div>
+        <div class='auth__menu'>
+            <div class='auth__menu_navbar'>
+                <div v-for='(button, index) in pageList' :key='index' v-bind:class='[button === page ? "auth__menu_navbar_button_acitve" : "auth__menu_navbar_button"]'  @click='page = button'>{{button}}</div>
+            </div>
+            <div class='auth__menu_inputmenu'>
+            <input v-if='page === "Авторизация" || page === "Регистрация"' id='login' class='auth__input' placeholder="Введите логин" />
+            <input v-if='page === "Восстановление" || page === "Регистрация"' id='email' class='auth__input' placeholder="Введите email" />
+            <input v-if='page === "Авторизация" || page === "Регистрация"' id='pass' type='password' class='auth__input' placeholder="Введите пароль" />
+            <input v-if='page === "Регистрация"' id='re_pass' type='password' class='auth__input' placeholder="Введите пароль повторно" />
+            </div>
+
+            <div @click='handleClick(page)' v-if='page === "Авторизация"' class='auth__menu_button'>Войти</div>
+            <div @click='handleClick(page)' v-if='page === "Регистрация"' class='auth__menu_button'>Регистрация</div>
+            <div @click='handleClick(page)' v-if='page === "Восстановление"' class='auth__menu_button'>Восстановить</div>
+
+        </div>
+        <div style='width: 2%; height: 4%; top: 10%; left: 10%; right: 40%; bottom: 10%' data-speed='-5' class='auth__close'>
+        </div>
+        <div style='width: 8%; height: 16%; top: 20%; left: 20%; right: 60%; bottom: 30%' data-speed='0.5' class='auth__close'>
+        </div>
+        <div style='width: 2%; height: 4%; top: 30%; left: 40%; right: 50%; bottom: 50%' data-speed='-3' class='auth__close'>
+        </div>
+        <div style='width: 8%; height: 16%; top: 50%; right: 5%;' data-speed='1' class='auth__close'>
+        </div>
+        <div style='width: 4%; height: 8%; top: 10%; right: 50%; bottom: 50%' data-speed='0.5' class='auth__close'>
+        </div>
+        <div style='width: 16%; height: 32%; left: 50%; bottom: 10%' data-speed='-0.5' class='auth__close'>
+        </div>
+        <div style='width: 2%; height: 4%; top: 40%; left: 20%; right: 50%; bottom: 30%' data-speed='2' class='auth__close'>
+        </div>
+        <div style='width: 2%; height: 4%; top: 30%; left: 10%; right: 40%; bottom: 10%' data-speed='3' class='auth__close'>
+        </div>
+    </div>
+</body>
+<script>
+document.addEventListener('mousemove', move);
+function move (e){
+this.querySelectorAll('.auth__close').forEach(close => {
+    const speed = close.getAttribute('data-speed');
+    const x = (window.innerWidth - e.pageX * speed)/100;
+     const y = (window.innerHeight - e.pageX * speed)/100;
+     close.style.transform = `translateX(${x}px) translateY(${y}px) rotate(${x}deg)`
+})
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src='app.js'></script>
+</html>

@@ -1,0 +1,102 @@
+.auth__background{
+    position:absolute;
+    width:100%;
+    height:100%;
+    left: 0;
+    top: 0;
+    background: black;
+    overflow: hidden;
+    -webkit-user-select: none;
+}
+
+.auth__npc{
+    position: absolute;
+    right: -20vw;
+    bottom: 0;
+    height: 50vw;
+    width:70vw;
+    content: url(./assets/gta_PNG18.png);
+    z-index: 1;
+}
+
+.auth__menu{
+    position: absolute;
+    height:70%;
+    width:30%;
+    background: rgb(0, 0, 0);
+    margin-left: 10%;
+    margin-top: 8%;
+    box-shadow: 0px 0px 40px 10px purple;
+    border-radius: 5%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.auth__close{
+position: absolute;
+  background-color: white;
+  clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+z-index: 0;
+}
+
+.auth__menu_inputmenu{
+    height: 75%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth__input{
+    margin: 5% 0 5% 0;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 0.8vw;
+    border-bottom: 0.1vw solid purple;
+    text-align: center;
+    color: white;
+}
+
+.auth__menu_navbar{
+    height: 10%;
+    width: 100%;
+      display: flex;
+    justify-content: space-around;
+    align-items: center;  
+}
+
+.auth__menu_navbar_button{
+    color: grey;
+     font-size: 0.8vw;
+}
+
+.auth__menu_navbar_button_acitve{
+    font-size: 0.8vw;
+    color: white;
+   border-bottom: 0.1vw solid purple;
+}
+
+.auth__menu_navbar_button:hover{
+color: white;
+}
+
+.auth__menu_button{
+    height: 5%;
+    width: 30%;
+     border: 0.1vw solid grey;
+     color: grey;
+       display: flex;
+    justify-content: center;
+    align-items: center;  
+    font-size: 0.8vw;
+}
+
+.auth__menu_button:hover{
+border: 0.1vw solid grey;
+     color: white;
+     box-shadow: 0px 0px 10px 2px purple;
+}
