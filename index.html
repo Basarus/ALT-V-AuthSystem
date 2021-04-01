@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animate.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
     <div id='app' class='auth__background'>
-        <div class='auth__npc'></div>
-        <div class='auth__menu'>
+        <div style='height: 100%; width: 100%; right: -17%; filter: blur(80px); z-index: 0;' class='auth__npc'></div>
+        <div style="animation: Slade 1s ease 0s 1 normal forwards;" class='auth__npc'></div>
+        <div class='auth__menu animate__animated animate__fadeIn'>
             <div class='auth__menu_navbar'>
                 <div v-for='(button, index) in pageList' :key='index' v-bind:class='[button === page ? "auth__menu_navbar_button_acitve" : "auth__menu_navbar_button"]'  @click='page = button'>{{button}}</div>
             </div>
